@@ -2,12 +2,12 @@ import React from 'react';
 
 export const MobileStickyCTA = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex bg-white p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden border-t border-gray-200">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex glass border-t border-white/10 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.3)] md:hidden backdrop-blur-xl bg-[#030712]/80">
       <a
         href="https://wa.me/918000489090"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-full items-center justify-center rounded-full bg-blue-brand px-6 py-3 text-base font-bold text-white shadow-lg transition-transform active:scale-95"
+        className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-base font-bold text-white shadow-lg shadow-blue-500/30 transition-all active:scale-95 hover:bg-blue-500"
       >
         <svg
           className="mr-2 h-5 w-5"

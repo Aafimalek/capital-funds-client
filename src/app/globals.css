@@ -27,12 +27,15 @@
 /* Animation Utilities */
 .animate-aurora {
   animation: aurora 10s linear infinite;
+  will-change: background-position;
 }
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 .animate-pulse-glow {
   animation: pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: opacity, transform;
 }
 
 html {
@@ -54,7 +57,7 @@ body {
 
 /* Glassmorphism 2.0 Utilities */
 .glass {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -63,13 +66,14 @@ body {
 /* Premium Card with inner highlight */
 .glass-card {
   background: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(16px); /* Reduced from 24px for performance */
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
 }
 
 .glass-card:hover {
@@ -111,4 +115,9 @@ body {
 
 .animate-marquee {
   animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.pause-animation:hover {
+  animation-play-state: paused;
 }

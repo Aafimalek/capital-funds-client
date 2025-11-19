@@ -136,19 +136,26 @@ Investment Amount: ${formData.investmentAmount}`;
 
                 <div className="space-y-2">
                   <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Capital</label>
-                  <select
-                    name="investmentAmount"
-                    required
-                    value={formData.investmentAmount}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none"
-                  >
-                    <option value="" disabled className="text-gray-500">Select Investment Amount</option>
-                    <option value="<50k" className="bg-gray-900">Below ₹50,000</option>
-                    <option value="50k-1L" className="bg-gray-900">₹50,000 - ₹1 Lakh</option>
-                    <option value="1L-3L" className="bg-gray-900">₹1 Lakh - ₹3 Lakhs</option>
-                    <option value=">5L" className="bg-gray-900">Above ₹5 Lakhs</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="investmentAmount"
+                      required
+                      value={formData.investmentAmount}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none"
+                    >
+                      <option value="" disabled className="text-gray-500">Select Investment Amount</option>
+                      <option value="<50k" className="bg-gray-900">Below ₹50,000</option>
+                      <option value="50k-1L" className="bg-gray-900">₹50,000 - ₹1 Lakh</option>
+                      <option value="1L-3L" className="bg-gray-900">₹1 Lakh - ₹3 Lakhs</option>
+                      <option value=">5L" className="bg-gray-900">Above ₹5 Lakhs</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                   <button
@@ -157,8 +164,8 @@ Investment Amount: ${formData.investmentAmount}`;
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Get Free Consultation
-                      <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
                     <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

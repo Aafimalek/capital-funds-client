@@ -137,7 +137,7 @@ export const Packages = () => {
                         <div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border bg-white/5 ${
                           pkg.isPopular ? 'border-yellow-500/30 text-yellow-400' : 'border-white/10 text-blue-400'
                         }`}>
-                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                           </svg>
                         </div>
