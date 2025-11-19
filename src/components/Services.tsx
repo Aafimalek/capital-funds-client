@@ -4,108 +4,154 @@ import { FadeIn } from './FadeIn';
 const services = [
   {
     title: "Options Trading",
-    description: "Specialized strategies for Call & Put options to maximize returns in volatile markets. We provide precise entry and exit points.",
+    description: "Specialized Call & Put strategies for volatile markets. High precision entry/exit.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 text-white">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 text-white">
+        <path fillRule="evenodd" d="M2.25 13.5a8.25 8.25 0 0 1 8.25-8.25.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 .75.75 8.25 8.25 0 0 1-16.5 0Z" clipRule="evenodd" />
+        <path fillRule="evenodd" d="M12.75 3a.75.75 0 0 1 .75-.75 8.25 8.25 0 0 1 8.25 8.25.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75V3Z" clipRule="evenodd" />
       </svg>
     ),
-    features: ["Call/Put Strategies", "Risk Management", "Weekly Expiry Specials"],
-    color: "bg-blue-brand",
+    color: "from-blue-500 to-blue-600",
   },
   {
     title: "Indices Coverage",
-    description: "Comprehensive tracking and analysis of major Indian market indices. Stay ahead of the market trends with our expert insights.",
+    description: "Deep dive analysis of Nifty, BankNifty, and FinNifty trends.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 text-white">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 text-white">
+        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.035-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c-1.035 0-1.875.84-1.875 1.875v9.375c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V10.5c0-1.035-.84-1.875-1.875-1.875h-.75ZM3 13.125c-1.035 0-1.875.84-1.875 1.875v4.875c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875v-4.875c0-1.035-.84-1.875-1.875-1.875h-.75Z" />
       </svg>
     ),
-    features: ["Nifty", "BankNifty", "FinNifty", "Sensex"],
-    color: "bg-navy",
+    color: "from-cyan-500 to-blue-500",
   },
   {
     title: "Equity & Cash",
-    description: "Intraday recommendations for high-volume stocks. Perfect for traders looking for quick daily gains in the cash market.",
+    description: "Intraday picks for high-volume stocks with momentum analysis.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 text-white">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 text-white">
+        <path fillRule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v.756a49.106 49.106 0 0 1 9.152 1 .75.75 0 0 1-.152 1.485h-1.918c2.479 1.402 4.168 4.042 4.168 7.109v6h1.125a.75.75 0 0 1 0 1.5h-21a.75.75 0 0 1 0-1.5h1.125v-6c0-3.067 1.689-5.707 4.168-7.109H4.25a.75.75 0 0 1-.152-1.485 49.105 49.105 0 0 1 9.152-1V3a.75.75 0 0 1 .75-.75Zm4.878 13.5H7.122v-6c0-2.048 1.171-3.847 2.932-4.714.733.361 1.486.66 2.253.896 1.035-.322 2.07-.73 3.086-1.219 1.297.77 2.107 2.16 2.485 3.712V15.75Z" clipRule="evenodd" />
       </svg>
     ),
-    features: ["Intraday Picks", "High Volume Stocks", "Momentum Trading"],
-    color: "bg-gold",
+    color: "from-yellow-500 to-orange-500",
   },
   {
     title: "Futures Strategies",
-    description: "Advanced derivative strategies for experienced traders. Leverage market movements with our calculated futures recommendations.",
+    description: "Advanced hedging and derivative strategies for HNIs.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 text-white">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 text-white">
+        <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clipRule="evenodd" />
       </svg>
     ),
-    features: ["Stock Futures", "Index Futures", "Hedging Strategies"],
-    color: "bg-purple-600",
+    color: "from-purple-500 to-pink-500",
   },
 ];
 
 export const Services = () => {
   return (
-    <section id="services" className="py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+    <section id="services" className="relative py-32 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
+      <div className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[120px]" />
+      
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-20 text-center">
           <FadeIn>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-blue-brand">
-              Our Expertise
+            <span className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-300 backdrop-blur-sm">
+              Our Services
+            </span>
+            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Trading Solutions <br />
+              <span className="text-gradient">Designed for Impact</span>
             </h2>
-            <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-white sm:text-4xl">
-              Services Tailored for Every Trader
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
-              From beginner-friendly options to advanced futures strategies, we cover the entire spectrum of the Indian Stock Market.
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+              From high-frequency options strategies to long-term wealth creation, we provide the intelligence you need to stay ahead.
             </p>
           </FadeIn>
         </div>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <FadeIn key={service.title} delay={index * 100} className="h-full">
-              <div
-                className="group flex h-full flex-col overflow-hidden rounded-2xl glass-card shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
-              >
-                <div className={`${service.color} flex h-24 items-center justify-center transition-colors group-hover:opacity-90`}>
-                  {service.icon}
-                </div>
-                <div className="flex flex-1 flex-col justify-between p-6">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-rows-2 h-auto lg:h-[600px]">
+          {/* Bento Grid Item 1: Options (Large) */}
+          <div className="md:col-span-2 md:row-span-2">
+            <FadeIn className="h-full">
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 md:p-12 transition-all hover:border-blue-500/30">
+                <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
-                    <h3 className="mb-3 text-xl font-bold text-white">
-                      {service.title}
-                    </h3>
-                    <p className="mb-6 text-gray-400">
-                      {service.description}
-                    </p>
-                    <ul className="mb-6 space-y-2">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center text-sm text-gray-300">
-                          <svg className="mr-2 h-4 w-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25">
+                      {services[0].icon}
+                    </div>
+                    <h3 className="mb-4 text-3xl font-bold text-white">{services[0].title}</h3>
+                    <p className="text-lg text-gray-400 max-w-md leading-relaxed">{services[0].description}</p>
                   </div>
-                  <a
-                    href="https://wa.me/918000489090"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-lg border border-transparent bg-blue-brand px-4 py-2 text-sm font-medium text-white shadow-sm shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    Learn More
-                  </a>
+                  <div className="mt-8">
+                    <div className="flex items-center gap-2 text-sm font-medium text-blue-300">
+                      <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                      High Accuracy Strategies
+                    </div>
+                  </div>
+                </div>
+                {/* Decorative Chart Line */}
+                <div className="absolute bottom-0 right-0 w-2/3 opacity-20">
+                  <svg viewBox="0 0 200 100" fill="none" className="w-full text-blue-500">
+                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50 V 100 H 0 Z" fill="currentColor" fillOpacity="0.2" />
+                  </svg>
                 </div>
               </div>
             </FadeIn>
-          ))}
+          </div>
+
+          {/* Bento Grid Item 2: Indices */}
+          <div className="md:col-span-1 md:row-span-1">
+            <FadeIn delay={100} className="h-full">
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all hover:border-cyan-500/30">
+                <div className="relative z-10">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/25">
+                    {services[1].icon}
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-white">{services[1].title}</h3>
+                  <p className="text-sm text-gray-400">{services[1].description}</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Bento Grid Item 3: Equity */}
+          <div className="md:col-span-1 md:row-span-1">
+            <FadeIn delay={200} className="h-full">
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all hover:border-orange-500/30">
+                <div className="relative z-10">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-orange-500 to-red-500 shadow-lg shadow-orange-500/25">
+                    {services[2].icon}
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-white">{services[2].title}</h3>
+                  <p className="text-sm text-gray-400">{services[2].description}</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+
+        {/* Futures Card (Full Width on Mobile, Span on Desktop) */}
+        <div className="mt-6 grid md:grid-cols-3">
+           <div className="md:col-span-3">
+             <FadeIn delay={300}>
+               <div className="glass-card group relative overflow-hidden rounded-[2.5rem] p-8 md:px-12 md:py-10 transition-all hover:border-purple-500/30 flex flex-col md:flex-row items-center gap-8">
+                 <div className="shrink-0 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/25">
+                   {services[3].icon}
+                 </div>
+                 <div className="flex-1 text-center md:text-left">
+                   <h3 className="mb-2 text-2xl font-bold text-white">{services[3].title}</h3>
+                   <p className="text-gray-400">{services[3].description}</p>
+                 </div>
+                 <a href="https://wa.me/918000489090" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white/10 px-8 py-3 font-medium text-white transition-all hover:bg-white/20">
+                    <span>Get Started</span>
+                    <svg className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                 </a>
+               </div>
+             </FadeIn>
+           </div>
         </div>
       </div>
     </section>

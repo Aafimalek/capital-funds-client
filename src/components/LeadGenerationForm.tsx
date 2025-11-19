@@ -24,167 +24,149 @@ export const LeadGenerationForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Prepare message for WhatsApp
     const message = `New Demo Request:%0A
 Name: ${formData.firstName} ${formData.lastName}%0A
 Phone: ${formData.phone}%0A
 Email: ${formData.email}%0A
 Currently Trading: ${formData.isTrading === 'yes' ? 'Yes' : 'No'}%0A
 Investment Amount: ${formData.investmentAmount}`;
-
-    // Redirect to WhatsApp
     window.open(`https://wa.me/918000489090?text=${message}`, '_blank');
   };
 
   return (
-    <section className="relative overflow-hidden bg-blue-brand py-24 text-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor" />
-        </svg>
+    <section className="relative overflow-hidden py-24">
+      {/* Decorative Glows */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[120px] animate-pulse-glow" />
       </div>
 
-      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Request a Live Demo Call Now
-            </h2>
-            <p className="mt-4 text-lg text-blue-100">
-              Get personalized insights and start your profitable trading journey today.
-            </p>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={200}>
-          <div className="mx-auto mt-12 max-w-xl rounded-2xl bg-white p-8 shadow-2xl sm:p-10">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    required
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-brand focus:outline-none focus:ring-blue-brand"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    required
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-brand focus:outline-none focus:ring-blue-brand"
-                  />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          {/* Text Content */}
+          <FadeIn>
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Ready to Elevate <br />
+                <span className="text-gradient">Your Portfolio?</span>
+              </h2>
+              <p className="mt-6 text-lg text-gray-400">
+                Join 5,000+ traders who have transformed their strategy with our insights. Get a free personalized demo call today.
+              </p>
+              
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="h-10 w-10 rounded-full border-2 border-black bg-gray-800" />
+                    ))}
+                  </div>
+                  <span className="text-sm font-medium text-gray-300">Join 5k+ Traders</span>
                 </div>
               </div>
+            </div>
+          </FadeIn>
 
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone Number
-                  </label>
+          {/* Glass Form */}
+          <FadeIn delay={200}>
+            <div className="glass-card relative rounded-3xl p-8 md:p-10">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium uppercase tracking-wide text-gray-400">First Name</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      required
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Last Name</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      required
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Phone</label>
                   <input
                     type="tel"
                     name="phone"
-                    id="phone"
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-brand focus:outline-none focus:ring-blue-brand"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                    placeholder="+91 98765 43210"
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-brand focus:outline-none focus:ring-blue-brand"
-                  />
-                </div>
-              </div>
 
-              {/* Interactive Questions */}
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Are you currently trading?
-                  </label>
-                  <div className="mt-2 flex gap-4">
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Current Status</label>
+                  <div className="flex rounded-xl bg-white/5 p-1 border border-white/10">
                     <button
                       type="button"
                       onClick={() => handleToggle('yes')}
-                      className={`flex-1 rounded-md border py-2 text-sm font-medium transition-colors ${
-                        formData.isTrading === 'yes'
-                          ? 'bg-blue-brand text-white border-blue-brand'
-                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${
+                        formData.isTrading === 'yes' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
                       }`}
                     >
-                      Yes
+                      Trading
                     </button>
                     <button
                       type="button"
                       onClick={() => handleToggle('no')}
-                      className={`flex-1 rounded-md border py-2 text-sm font-medium transition-colors ${
-                        formData.isTrading === 'no'
-                          ? 'bg-blue-brand text-white border-blue-brand'
-                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${
+                        formData.isTrading === 'no' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
                       }`}
                     >
-                      No
+                      New
                     </button>
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="investmentAmount" className="block text-sm font-medium text-gray-700">
-                    Investment Amount
-                  </label>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Capital</label>
                   <select
                     name="investmentAmount"
-                    id="investmentAmount"
                     required
                     value={formData.investmentAmount}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm focus:border-blue-brand focus:outline-none focus:ring-blue-brand"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none"
                   >
-                    <option value="" disabled>Select an amount</option>
-                    <option value="<50k">Below ₹50,000</option>
-                    <option value="50k-1L">₹50,000 - ₹1 Lakh</option>
-                    <option value="1L-3L">₹1 Lakh - ₹3 Lakhs</option>
-                    <option value="3L-5L">₹3 Lakhs - ₹5 Lakhs</option>
-                    <option value=">5L">Above ₹5 Lakhs</option>
+                    <option value="" disabled className="text-gray-500">Select Investment Amount</option>
+                    <option value="<50k" className="bg-gray-900">Below ₹50,000</option>
+                    <option value="50k-1L" className="bg-gray-900">₹50,000 - ₹1 Lakh</option>
+                    <option value="1L-3L" className="bg-gray-900">₹1 Lakh - ₹3 Lakhs</option>
+                    <option value=">5L" className="bg-gray-900">Above ₹5 Lakhs</option>
                   </select>
                 </div>
-              </div>
 
-              <button
-                type="submit"
-                className="w-full rounded-md bg-navy px-4 py-3 text-base font-semibold text-white shadow-sm transition-transform hover:scale-[1.02] hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              >
-                Submit Request
-              </button>
-            </form>
-          </div>
-        </FadeIn>
+                  <button
+                    type="submit"
+                    className="group relative w-full overflow-hidden rounded-xl bg-blue-600 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/50 hover:scale-[1.02]"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Get Free Consultation
+                      <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </button>
+              </form>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

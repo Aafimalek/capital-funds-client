@@ -18,9 +18,9 @@ export const Header = () => {
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
           <Link href="#home" className="flex items-center space-x-2">
-            <div className="relative h-16 w-64 transition-transform duration-300 hover:scale-105">
+            <div className="relative h-30 w-64 transition-transform duration-300 hover:scale-105">
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Capital Funds logo"
                 width={256}
                 height={64}
@@ -47,15 +47,6 @@ export const Header = () => {
 
         {/* Right: CTA & Contact */}
         <div className="flex items-center gap-4">
-            <a
-              href="https://wa.me/918000489090"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-2 text-sm font-semibold text-gray-300 transition-colors hover:text-gold"
-            >
-              <span>+91 8000489090</span>
-            </a>
-            
             <a
               href="https://wa.me/918000489090"
               target="_blank"
