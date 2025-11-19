@@ -50,8 +50,8 @@ export const Services = () => {
   return (
     <section id="services" className="relative py-32 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
-      <div className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[120px]" />
+      <div className="absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px] animate-pulse-glow" />
+      <div className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20 text-center">
@@ -73,15 +73,16 @@ export const Services = () => {
           {/* Bento Grid Item 1: Options (Large) */}
           <div className="md:col-span-2 md:row-span-2">
             <FadeIn className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 md:p-12 transition-all hover:border-blue-500/30">
-                <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 hover:scale-[1.02] hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
-                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25">
+                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                       {services[0].icon}
                     </div>
-                    <h3 className="mb-4 text-3xl font-bold text-white">{services[0].title}</h3>
-                    <p className="text-lg text-gray-400 max-w-md leading-relaxed">{services[0].description}</p>
+                    <h3 className="mb-4 text-3xl font-bold text-white group-hover:text-blue-200 transition-colors">{services[0].title}</h3>
+                    <p className="text-lg text-gray-400 max-w-md leading-relaxed group-hover:text-gray-300 transition-colors">{services[0].description}</p>
                   </div>
                   <div className="mt-8">
                     <div className="flex items-center gap-2 text-sm font-medium text-blue-300">
@@ -90,10 +91,11 @@ export const Services = () => {
                     </div>
                   </div>
                 </div>
-                {/* Decorative Chart Line */}
-                <div className="absolute bottom-0 right-0 w-2/3 opacity-20">
+
+                {/* Decorative Chart Line - Animated on Hover */}
+                <div className="absolute bottom-0 right-0 w-3/4 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:translate-x-2">
                   <svg viewBox="0 0 200 100" fill="none" className="w-full text-blue-500">
-                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50" stroke="currentColor" strokeWidth="4" fill="none" className="drop-shadow-lg" />
                     <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50 V 100 H 0 Z" fill="currentColor" fillOpacity="0.2" />
                   </svg>
                 </div>
@@ -104,13 +106,20 @@ export const Services = () => {
           {/* Bento Grid Item 2: Indices */}
           <div className="md:col-span-1 md:row-span-1">
             <FadeIn delay={100} className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all hover:border-cyan-500/30">
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/20">
                 <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/25">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
                     {services[1].icon}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">{services[1].title}</h3>
-                  <p className="text-sm text-gray-400">{services[1].description}</p>
+                  <h3 className="mb-2 text-xl font-bold text-white group-hover:text-cyan-200 transition-colors">{services[1].title}</h3>
+                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">{services[1].description}</p>
+                </div>
+                
+                {/* Background Decor */}
+                <div className="absolute -right-4 bottom-8 h-24 w-24 opacity-10 transition-all duration-500 group-hover:opacity-20 group-hover:scale-110">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full text-cyan-500">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                   </svg>
                 </div>
               </div>
             </FadeIn>
@@ -119,13 +128,20 @@ export const Services = () => {
           {/* Bento Grid Item 3: Equity */}
           <div className="md:col-span-1 md:row-span-1">
             <FadeIn delay={200} className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all hover:border-orange-500/30">
+              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:scale-[1.02] hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/20">
                 <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-orange-500 to-red-500 shadow-lg shadow-orange-500/25">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-orange-500 to-red-500 shadow-lg shadow-orange-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                     {services[2].icon}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">{services[2].title}</h3>
-                  <p className="text-sm text-gray-400">{services[2].description}</p>
+                  <h3 className="mb-2 text-xl font-bold text-white group-hover:text-orange-200 transition-colors">{services[2].title}</h3>
+                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">{services[2].description}</p>
+                </div>
+
+                 {/* Background Decor */}
+                 <div className="absolute -right-4 bottom-8 h-24 w-24 opacity-10 transition-all duration-500 group-hover:opacity-20 group-hover:scale-110">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full text-orange-500">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                   </svg>
                 </div>
               </div>
             </FadeIn>
@@ -136,20 +152,37 @@ export const Services = () => {
         <div className="mt-6 grid md:grid-cols-3">
            <div className="md:col-span-3">
              <FadeIn delay={300}>
-               <div className="glass-card group relative overflow-hidden rounded-[2.5rem] p-8 md:px-12 md:py-10 transition-all hover:border-purple-500/30 flex flex-col md:flex-row items-center gap-8">
-                 <div className="shrink-0 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/25">
+               <div className="glass-card group relative overflow-hidden rounded-[2.5rem] p-8 md:px-12 md:py-10 transition-all duration-500 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/20 flex flex-col md:flex-row items-center gap-8">
+                 {/* Background Gradient */}
+                 <div className="absolute inset-0 bg-linear-to-r from-purple-900/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                 
+                 <div className="relative z-10 shrink-0 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
                    {services[3].icon}
                  </div>
-                 <div className="flex-1 text-center md:text-left">
-                   <h3 className="mb-2 text-2xl font-bold text-white">{services[3].title}</h3>
-                   <p className="text-gray-400">{services[3].description}</p>
+                 <div className="relative z-10 flex-1 text-center md:text-left">
+                   <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-purple-200 transition-colors">{services[3].title}</h3>
+                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{services[3].description}</p>
                  </div>
-                 <a href="https://wa.me/918000489090" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white/10 px-8 py-3 font-medium text-white transition-all hover:bg-white/20">
-                    <span>Get Started</span>
-                    <svg className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                 <div className="relative z-10">
+                   <a href="https://wa.me/918000489090" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white/10 px-8 py-3 font-medium text-white transition-all hover:bg-white/20 hover:scale-105 active:scale-95 border border-white/5 hover:border-white/20">
+                      <span>Get Started</span>
+                      <svg className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                   </a>
+                 </div>
+                 
+                 {/* Background Decor */}
+                 <div className="absolute right-0 top-0 h-full w-1/2 opacity-5 pointer-events-none">
+                    <svg viewBox="0 0 400 400" fill="none" className="h-full w-full text-purple-500">
+                       <defs>
+                          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                             <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
+                          </pattern>
+                       </defs>
+                       <rect width="100%" height="100%" fill="url(#grid)" />
                     </svg>
-                 </a>
+                 </div>
                </div>
              </FadeIn>
            </div>
