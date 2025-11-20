@@ -75,7 +75,7 @@ const packages = [
 
 export const Packages = () => {
 	return (
-		<section id="packages" className="relative py-16 md:py-32 overflow-hidden bg-background">
+		<section id="packages" className="relative py-16 md:py-32 overflow-hidden bg-gradient-4">
 			{/* Animated Background Gradients */}
 			<div className="absolute inset-0">
 				<div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse-glow" />

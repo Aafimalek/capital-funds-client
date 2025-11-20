@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-background">
+    <section className="relative h-screen w-full overflow-hidden bg-gradient-1">
       {/* Background Video with Modern Overlay */}
       <div className="absolute inset-0 h-full w-full">
         <video

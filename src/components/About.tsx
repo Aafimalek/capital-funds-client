@@ -93,7 +93,7 @@ const badges = [
 
 export const About = () => {
 	return (
-		<section id="about" className="relative overflow-hidden py-16 md:py-24 bg-background">
+		<section id="about" className="relative overflow-hidden py-16 md:py-24 bg-gradient-2">
 			{/* Animated Background Gradients */}
 			<div className="absolute inset-0">
 				<div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse-glow" />
