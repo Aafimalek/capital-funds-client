@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -12,13 +16,17 @@ export const Header = () => {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 glass transition-all">
+    <header className="sticky top-0 z-[60] w-full border-b border-white/10 glass transition-all bg-[#030712]/80 backdrop-blur-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
-          <Link href="#home" className="flex items-center space-x-2">
-            <div className="relative h-30 w-64 transition-transform duration-300 hover:scale-105">
+          <Link href="#home" className="flex items-center space-x-2" onClick={handleLinkClick}>
+            <div className="relative h-30 w-48 sm:w-64 transition-transform duration-300 hover:scale-105">
               <Image
                 src="/logo2.png"
                 alt="Capital Funds logo"
@@ -32,7 +40,7 @@ export const Header = () => {
           </Link>
         </div>
 
-        {/* Center: Navigation */}
+        {/* Center: Navigation (Desktop) */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -45,8 +53,8 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* Right: CTA & Contact */}
-        <div className="flex items-center gap-4">
+        {/* Right: CTA & Contact (Desktop) */}
+        <div className="hidden md:flex items-center gap-4">
             <a
               href="https://wa.me/918000489090"
               target="_blank"
@@ -56,6 +64,54 @@ export const Header = () => {
               Request Demo Call
             </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? (
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full border-b border-white/10 bg-[#030712] transition-all duration-300 ease-in-out overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[500px] opacity-100 shadow-2xl' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="flex flex-col p-4 space-y-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="block text-base font-medium text-gray-300 transition-colors hover:text-blue-brand px-4 py-2 rounded-lg hover:bg-white/5"
+              onClick={handleLinkClick}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="pt-4 border-t border-white/10">
+            <a
+              href="https://wa.me/918000489090"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-full bg-blue-brand px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all active:scale-95 hover:bg-blue-600"
+              onClick={handleLinkClick}
+            >
+              Request Demo Call
+            </a>
+          </div>
+        </nav>
       </div>
     </header>
   );
