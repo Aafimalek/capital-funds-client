@@ -74,8 +74,14 @@ export const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const body = `Name: ${formData.fullName}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0A%0A${formData.message}`;
-    window.location.href = `mailto:info@capitalfunds.com?subject=${encodeURIComponent(formData.subject)}&body=${body}`;
+    const message = encodeURIComponent(`New Contact Inquiry:
+Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+Message: ${formData.message}`);
+
+    window.open(`https://wa.me/917574067294?text=${message}`, '_blank');
   };
 
   return (

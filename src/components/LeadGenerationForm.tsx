@@ -24,13 +24,13 @@ export const LeadGenerationForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `New Demo Request:%0A
-Name: ${formData.firstName} ${formData.lastName}%0A
-Phone: ${formData.phone}%0A
-Email: ${formData.email}%0A
-Currently Trading: ${formData.isTrading === 'yes' ? 'Yes' : 'No'}%0A
-Investment Amount: ${formData.investmentAmount}`;
-    window.open(`https://wa.me/918000489090?text=${message}`, '_blank');
+    const message = encodeURIComponent(`New Demo Request:
+Name: ${formData.firstName} ${formData.lastName}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Currently Trading: ${formData.isTrading === 'yes' ? 'Yes' : 'No'}
+Investment Amount: ${formData.investmentAmount}`);
+    window.open(`https://wa.me/917574067294?text=${message}`, '_blank');
   };
 
   return (
