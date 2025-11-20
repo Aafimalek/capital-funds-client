@@ -13,28 +13,59 @@ export const LeadGenerationForm = () => {
     investmentAmount: '',
   });
 
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    investmentAmount: '',
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const handleToggle = (value: string) => {
     setFormData((prev) => ({ ...prev, isTrading: value }));
   };
 
+  const validateForm = () => {
+    const newErrors = {
+      firstName: formData.firstName ? '' : 'First name is required.',
+      lastName: formData.lastName ? '' : 'Last name is required.',
+      phone: '',
+      email: '',
+      investmentAmount: formData.investmentAmount ? '' : 'Please select an investment amount.',
+    };
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    } else if (!formData.email) {
+      newErrors.email = 'Email is required.';
+    }
+
+    // Phone validation
+    const numericPhone = formData.phone.replace(/\D/g, '');
+    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
+    if (!phoneRegex.test(formData.phone) || numericPhone.length < 10) {
+      newErrors.phone = 'Please enter a valid phone number with at least 10 digits.';
+    }
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    return Object.values(newErrors).every(error => error === '');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.investmentAmount) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-
-    // Phone validation (allow +91, spaces, dashes, and ensure at least 10 digits)
-    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
-    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
-      alert('Please enter a valid phone number with at least 10 digits.');
+    if (!validateForm()) {
       return;
     }
 
@@ -93,9 +124,12 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
+                        errors.firstName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                       placeholder="John"
                     />
+                    {errors.firstName && <p className="text-xs text-red-400 mt-1">{errors.firstName}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Last Name</label>
@@ -105,9 +139,12 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
+                        errors.lastName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                       placeholder="Doe"
                     />
+                    {errors.lastName && <p className="text-xs text-red-400 mt-1">{errors.lastName}</p>}
                   </div>
                 </div>
 
@@ -119,9 +156,12 @@ Investment Amount: ${formData.investmentAmount}`);
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all"
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
+                      errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    }`}
                     placeholder="+91 98765 43210"
                   />
+                  {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -146,6 +186,7 @@ Investment Amount: ${formData.investmentAmount}`);
                       New
                     </button>
                   </div>
+                  {/* isTrading is not required, but we can add validation if needed */}
                 </div>
 
                 <div className="space-y-2">
@@ -156,13 +197,15 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.investmentAmount}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none"
+                      className={`w-full rounded-xl border px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none ${
+                        errors.investmentAmount ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     >
                       <option value="" disabled className="text-gray-500">Select Investment Amount</option>
-                      <option value="<50k" className="bg-gray-900">Below ₹50,000</option>
+                      <option value="&lt;50k" className="bg-gray-900">Below ₹50,000</option>
                       <option value="50k-1L" className="bg-gray-900">₹50,000 - ₹1 Lakh</option>
                       <option value="1L-3L" className="bg-gray-900">₹1 Lakh - ₹3 Lakhs</option>
-                      <option value=">5L" className="bg-gray-900">Above ₹5 Lakhs</option>
+                      <option value="&gt;5L" className="bg-gray-900">Above ₹5 Lakhs</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -170,20 +213,37 @@ Investment Amount: ${formData.investmentAmount}`);
                       </svg>
                     </div>
                   </div>
+                  {errors.investmentAmount && <p className="text-xs text-red-400 mt-1">{errors.investmentAmount}</p>}
                 </div>
 
-                  <button
-                    type="submit"
-                    className="group relative w-full overflow-hidden rounded-xl bg-blue-600 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/50 hover:scale-[1.02]"
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Get Free Consultation
-                      <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </span>
-                    <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </button>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
+                      errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    }`}
+                    placeholder="example@email.com"
+                  />
+                  {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
+                </div>
+
+                <button
+                  type="submit"
+                  className="group relative w-full overflow-hidden rounded-xl bg-blue-600 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/50 hover:scale-[1.02]"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Get Free Consultation
+                    <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                </button>
               </form>
             </div>
           </FadeIn>

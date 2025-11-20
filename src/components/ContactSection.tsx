@@ -64,26 +64,57 @@ export const ContactSection = () => {
     message: '',
   });
 
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    setErrors((prev) => ({ ...prev, [name]: '' }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      fullName: formData.fullName ? '' : 'Full name is required.',
+      email: '',
+      phone: '',
+      subject: formData.subject ? '' : 'Subject is required.',
+      message: formData.message ? '' : 'Message is required.',
+    };
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    } else if (!formData.email) {
+      newErrors.email = 'Email is required.';
+    }
+
+    // Phone validation
+    const numericPhone = formData.phone.replace(/\D/g, '');
+    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
+    if (!phoneRegex.test(formData.phone) || numericPhone.length < 10) {
+      newErrors.phone = 'Please enter a valid phone number with at least 10 digits.';
+    }
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    return Object.values(newErrors).every(error => error === '');
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Basic validation
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.subject || !formData.message) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-
-    // Phone validation
-    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
-    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
-      alert('Please enter a valid phone number with at least 10 digits.');
+    if (!validateForm()) {
       return;
     }
 
@@ -187,9 +218,12 @@ Message: ${formData.message}`);
                     required
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
+                      errors.fullName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    }`}
                     placeholder="John Doe"
                   />
+                  {errors.fullName && <p className="text-xs text-red-400 mt-1">{errors.fullName}</p>}
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
@@ -204,9 +238,12 @@ Message: ${formData.message}`);
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
+                        errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                       placeholder="john@example.com"
                     />
+                    {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label htmlFor="phone" className="text-xs font-medium uppercase tracking-wide text-gray-400">
@@ -219,9 +256,12 @@ Message: ${formData.message}`);
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
+                        errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                       placeholder="+91 98765 43210"
                     />
+                    {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
                   </div>
                 </div>
 
@@ -236,9 +276,12 @@ Message: ${formData.message}`);
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
+                      errors.subject ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    }`}
                     placeholder="Inquiry regarding HNI Package"
                   />
+                  {errors.subject && <p className="text-xs text-red-400 mt-1">{errors.subject}</p>}
                 </div>
 
                 <div>
@@ -252,9 +295,12 @@ Message: ${formData.message}`);
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all"
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
+                      errors.message ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    }`}
                     placeholder="How can we help you?"
                   />
+                  {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
                 </div>
 
                 <button
