@@ -27,8 +27,8 @@ export const Footer = () => {
                 />
               </div>
               <div className="space-y-4 text-sm mt-6">
-                <div className="flex items-start gap-3 group">
-                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/30 transition-colors">
+                <div className="flex items-center gap-3 group">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/30 transition-colors">
                     <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                       <circle cx="12" cy="10" r="3" />

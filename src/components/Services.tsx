@@ -81,9 +81,9 @@ export const Services = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={service.delay}>
-              <div className="group relative h-full overflow-hidden rounded-2xl">
+              <div tabIndex={0} className="group relative h-full overflow-hidden rounded-2xl">
                 {/* Gradient Border Effect */}
-                <div className={`absolute -inset-0.5 ${service.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75`} />
+                <div className={`absolute -inset-0.5 ${service.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75 group-focus:opacity-75`} />
 
                 {/* Card Content */}
                 <div className="relative h-full glass-card rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:scale-[1.02] flex flex-col">

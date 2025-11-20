@@ -122,10 +122,10 @@ export const About = () => {
 				<div className="mt-12 md:mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 					{badges.map((badge, index) => (
 						<FadeIn key={badge.title} delay={index * 100} className="h-full">
-							<div className="group relative h-full overflow-hidden rounded-2xl">
+							<div tabIndex={0} className="group relative h-full overflow-hidden rounded-2xl">
 								{/* Gradient Border Glow Effect */}
 								<div
-									className={`absolute -inset-0.5 ${badge.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75`}
+									className={`absolute -inset-0.5 ${badge.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75 group-focus:opacity-75`}
 								/>
 								
 								{/* Card Content */}
