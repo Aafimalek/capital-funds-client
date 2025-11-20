@@ -103,14 +103,8 @@ export const Footer = () => {
 
           {/* Compliance & Social */}
           <FadeIn delay={300}>
-             <h3 className="mb-6 text-xs font-bold uppercase tracking-widest text-white">
-              Compliance
-            </h3>
+             
             <div className="space-y-6 text-sm">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">SEBI Registration</p>
-                <p className="font-mono text-blue-300">INH000000000</p>
-              </div>
               
               <div>
                 <p className="text-gray-400 text-xs mb-3">Connect with us</p>

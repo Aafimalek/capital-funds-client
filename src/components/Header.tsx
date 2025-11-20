@@ -21,7 +21,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-[60] w-full border-b border-white/10 glass transition-all bg-[#030712]/80 backdrop-blur-md">
+    <header className="fixed top-0 z-[60] w-full border-b border-white/10 glass transition-all bg-[#030712]/80 backdrop-blur-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
