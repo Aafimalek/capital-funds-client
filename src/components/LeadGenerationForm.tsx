@@ -97,7 +97,7 @@ Investment Amount: ${formData.investmentAmount}`);
               <p className="mt-6 text-lg text-gray-400">
                 Join 5,000+ traders who have transformed their strategy with our insights. Get a free personalized demo call today.
               </p>
-              
+
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
@@ -122,31 +122,33 @@ Investment Amount: ${formData.investmentAmount}`);
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <label className="text-xs font-medium uppercase tracking-wide text-gray-400">First Name</label>
+                    <label htmlFor="firstName" className="text-xs font-medium uppercase tracking-wide text-gray-400">First Name</label>
                     <input
+                      id="firstName"
                       type="text"
                       name="firstName"
+                      autoComplete="given-name"
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
-                        errors.firstName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                      }`}
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.firstName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                        }`}
                       placeholder="John"
                     />
                     {errors.firstName && <p className="text-xs text-red-400 mt-1">{errors.firstName}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Last Name</label>
+                    <label htmlFor="lastName" className="text-xs font-medium uppercase tracking-wide text-gray-400">Last Name</label>
                     <input
+                      id="lastName"
                       type="text"
                       name="lastName"
+                      autoComplete="family-name"
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
-                        errors.lastName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                      }`}
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.lastName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                        }`}
                       placeholder="Doe"
                     />
                     {errors.lastName && <p className="text-xs text-red-400 mt-1">{errors.lastName}</p>}
@@ -154,39 +156,38 @@ Investment Amount: ${formData.investmentAmount}`);
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Phone</label>
+                  <label htmlFor="phone" className="text-xs font-medium uppercase tracking-wide text-gray-400">Phone</label>
                   <input
+                    id="phone"
                     type="tel"
                     name="phone"
+                    autoComplete="tel"
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
-                      errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                    }`}
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     placeholder="+91 98765 43210"
                   />
                   {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Current Status</label>
+                  <span className="block text-xs font-medium uppercase tracking-wide text-gray-400">Current Status</span>
                   <div className="flex rounded-xl bg-white/5 p-1 border border-white/10">
                     <button
                       type="button"
                       onClick={() => handleToggle('yes')}
-                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${
-                        formData.isTrading === 'yes' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
-                      }`}
+                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${formData.isTrading === 'yes' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                        }`}
                     >
                       Trading
                     </button>
                     <button
                       type="button"
                       onClick={() => handleToggle('no')}
-                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${
-                        formData.isTrading === 'no' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
-                      }`}
+                      className={`flex-1 rounded-lg py-2 text-sm font-medium transition-all ${formData.isTrading === 'no' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                        }`}
                     >
                       New
                     </button>
@@ -195,16 +196,16 @@ Investment Amount: ${formData.investmentAmount}`);
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Capital</label>
+                  <label htmlFor="investmentAmount" className="text-xs font-medium uppercase tracking-wide text-gray-400">Capital</label>
                   <div className="relative">
                     <select
+                      id="investmentAmount"
                       name="investmentAmount"
                       required
                       value={formData.investmentAmount}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none ${
-                        errors.investmentAmount ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                      }`}
+                      className={`w-full rounded-xl border px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none ${errors.investmentAmount ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                        }`}
                     >
                       <option value="" disabled className="text-gray-500">Select Investment Amount</option>
                       <option value="&lt;50k" className="bg-gray-900">Below ₹50,000</option>
@@ -222,16 +223,17 @@ Investment Amount: ${formData.investmentAmount}`);
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-medium uppercase tracking-wide text-gray-400">Email</label>
+                  <label htmlFor="email" className="text-xs font-medium uppercase tracking-wide text-gray-400">Email</label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
+                    autoComplete="email"
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${
-                      errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                    }`}
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     placeholder="example@email.com"
                   />
                   {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}

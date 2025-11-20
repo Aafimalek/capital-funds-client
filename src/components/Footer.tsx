@@ -20,9 +20,8 @@ export const Footer = () => {
                 <Image
                   src="/logo2.png"
                   alt="Capital Funds logo"
-                  width={224}
-                  height={56}
-                  className="h-full w-full object-contain object-left"
+                  fill
+                  className="object-contain object-left"
                   sizes="256px"
                   priority={false}
                 />
@@ -37,7 +36,7 @@ export const Footer = () => {
                   </div>
                   <p className="text-gray-400 leading-relaxed">Mumbai, Maharashtra, India</p>
                 </div>
-                
+
                 <div className="flex items-center gap-3 group">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/30 transition-colors">
                     <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
@@ -72,8 +71,8 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm">
               {['Home', 'About', 'Services', 'Packages', 'Contact', 'FAQ'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={`#${item.toLowerCase()}`} 
+                  <Link
+                    href={`#${item.toLowerCase()}`}
                     className="group flex items-center text-gray-400 transition-colors hover:text-blue-400"
                   >
                     <span className="h-px w-0 bg-blue-500 transition-all group-hover:w-4 mr-0 group-hover:mr-2"></span>
@@ -103,9 +102,9 @@ export const Footer = () => {
 
           {/* Compliance & Social */}
           <FadeIn delay={300}>
-             
+
             <div className="space-y-6 text-sm">
-              
+
               <div>
                 <p className="text-gray-400 text-xs mb-3">Connect with us</p>
                 <div className="flex gap-4">
@@ -139,7 +138,7 @@ export const Footer = () => {
         <div className="mt-16 border-t border-white/10 pt-8">
           <div className="rounded-2xl bg-red-500/5 border border-red-500/10 p-4 mb-8 text-center">
             <p className="text-sm text-red-300/90">
-              <span className="font-bold uppercase text-red-400 block mb-1 text-xs tracking-wider">Standard Warning</span> 
+              <span className="font-bold uppercase text-red-400 block mb-1 text-xs tracking-wider">Standard Warning</span>
               Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
             </p>
           </div>

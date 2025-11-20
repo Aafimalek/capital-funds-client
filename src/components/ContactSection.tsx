@@ -215,12 +215,12 @@ Message: ${formData.message}`);
                     id="fullName"
                     name="fullName"
                     type="text"
+                    autoComplete="name"
                     required
                     value={formData.fullName}
                     onChange={handleChange}
-                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
-                      errors.fullName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                    }`}
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${errors.fullName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     placeholder="John Doe"
                   />
                   {errors.fullName && <p className="text-xs text-red-400 mt-1">{errors.fullName}</p>}
@@ -235,12 +235,12 @@ Message: ${formData.message}`);
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
-                        errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                      }`}
+                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                        }`}
                       placeholder="john@example.com"
                     />
                     {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
@@ -253,12 +253,12 @@ Message: ${formData.message}`);
                       id="phone"
                       name="phone"
                       type="tel"
+                      autoComplete="tel"
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
-                        errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                      }`}
+                      className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                        }`}
                       placeholder="+91 98765 43210"
                     />
                     {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
@@ -276,9 +276,8 @@ Message: ${formData.message}`);
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
-                      errors.subject ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                    }`}
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${errors.subject ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     placeholder="Inquiry regarding HNI Package"
                   />
                   {errors.subject && <p className="text-xs text-red-400 mt-1">{errors.subject}</p>}
@@ -295,9 +294,8 @@ Message: ${formData.message}`);
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${
-                      errors.message ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
-                    }`}
+                    className={`mt-2 w-full rounded-xl border px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-blue-500 focus:bg-white/10 focus:ring-1 focus:ring-blue-500 transition-all ${errors.message ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      }`}
                     placeholder="How can we help you?"
                   />
                   {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}

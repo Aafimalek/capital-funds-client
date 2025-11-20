@@ -30,9 +30,8 @@ export const Header = () => {
               <Image
                 src="/logo2.png"
                 alt="Capital Funds logo"
-                width={256}
-                height={64}
-                className="h-full w-full object-contain object-left"
+                fill
+                className="object-contain object-left"
                 sizes="(max-width: 768px) 200px, 256px"
                 priority
               />
