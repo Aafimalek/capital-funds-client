@@ -42,7 +42,7 @@ const badges = [
 
 export const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden py-24">
+    <section id="about" className="relative overflow-hidden py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -50,17 +50,17 @@ export const About = () => {
             <h2 className="text-base font-semibold uppercase tracking-wide text-blue-brand">
               Why Choose Capital Funds?
             </h2>
-            <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-white sm:text-4xl">
               The Trusted Analyzer Firm by Traders
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-400 mx-auto">
               We are a SEBI Registered Research Analyst firm dedicated to providing you with the most accurate and profitable stock market advice.
             </p>
           </FadeIn>
         </div>
 
         {/* Grid Layout */}
-        <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 md:mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {badges.map((badge, index) => (
             <FadeIn key={badge.title} delay={index * 100} className="h-full">
               <div

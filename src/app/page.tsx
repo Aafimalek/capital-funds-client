@@ -10,7 +10,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col w-full overflow-x-hidden max-w-[100vw]">
       {/* Home / Hero Section */}
       <div id="home">
         <Hero />

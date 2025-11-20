@@ -79,12 +79,12 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-16 md:py-24">
       {/* Background Glow for depth */}
-      <div className="absolute right-0 top-0 h-[500px] w-[500px] translate-x-1/2 -translate-y-1/4 rounded-full bg-blue-600/10 blur-[120px]" />
+      <div className="absolute right-0 top-0 h-[300px] w-[300px] md:h-[500px] md:w-[500px] translate-x-1/2 -translate-y-1/4 rounded-full bg-blue-600/10 blur-[80px] md:blur-[120px]" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-12 md:mb-16 max-w-3xl text-center">
           <FadeIn>
             <h2 className="text-sm font-bold uppercase tracking-widest text-blue-400">
               Contact Us
@@ -92,7 +92,7 @@ export const ContactSection = () => {
             <p className="mt-2 text-3xl font-bold text-white sm:text-4xl">
               Let's Discuss Your Trading Goals
             </p>
-            <p className="mt-4 text-lg text-gray-400">
+            <p className="mt-4 text-base md:text-lg text-gray-400">
               Reach out to our advisory team for any questions about services, compliance, or onboarding.
             </p>
           </FadeIn>

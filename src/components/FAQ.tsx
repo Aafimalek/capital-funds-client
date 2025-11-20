@@ -30,9 +30,9 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative py-24">
+    <section id="faq" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-16">
+        <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16">
           <FadeIn>
             <h2 className="text-sm font-bold uppercase tracking-widest text-blue-400">
               Common Questions
@@ -40,7 +40,7 @@ export const FAQ = () => {
             <p className="mt-2 text-3xl font-bold text-white sm:text-4xl">
               Frequently Asked <span className="text-gradient">Questions</span>
             </p>
-            <p className="mt-4 text-lg text-gray-400">
+            <p className="mt-4 text-base md:text-lg text-gray-400">
               Everything you need to know about our services and how we help you trade better.
             </p>
           </FadeIn>

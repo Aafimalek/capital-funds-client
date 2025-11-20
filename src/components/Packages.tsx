@@ -71,28 +71,28 @@ const packages = [
 
 export const Packages = () => {
   return (
-    <section id="packages" className="relative py-32 overflow-hidden">
+    <section id="packages" className="relative py-16 md:py-32 overflow-hidden">
       {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-blue-900/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <FadeIn>
             <span className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-300 backdrop-blur-sm">
               Pricing Plans
             </span>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-5xl">
               Affordable Packages for <br />
               <span className="text-gradient">Every Trader</span>
             </h2>
-            <p className="mt-6 max-w-2xl text-lg text-gray-400 mx-auto">
+            <p className="mt-6 max-w-2xl text-base md:text-lg text-gray-400 mx-auto">
               Choose the plan that best fits your trading style and capital. 
               Transparent pricing, no hidden fees.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3 lg:gap-10 items-start">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-3 lg:gap-10 items-start">
           {packages.map((pkg, index) => (
             <FadeIn key={pkg.name} delay={index * 150} className={pkg.isPopular ? 'lg:-mt-8 lg:mb-8' : ''}>
               <div

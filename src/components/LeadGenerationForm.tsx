@@ -34,10 +34,10 @@ Investment Amount: ${formData.investmentAmount}`;
   };
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-16 md:py-24">
       {/* Decorative Glows */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[120px] animate-pulse-glow" />
+        <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] md:h-[500px] md:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[80px] md:blur-[120px] animate-pulse-glow" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ Investment Amount: ${formData.investmentAmount}`;
           {/* Text Content */}
           <FadeIn>
             <div className="max-w-2xl">
-              <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
                 Ready to Elevate <br />
                 <span className="text-gradient">Your Portfolio?</span>
               </h2>
@@ -68,9 +68,9 @@ Investment Amount: ${formData.investmentAmount}`;
 
           {/* Glass Form */}
           <FadeIn delay={200}>
-            <div className="glass-card relative rounded-3xl p-8 md:p-10">
+            <div className="glass-card relative rounded-3xl p-6 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-xs font-medium uppercase tracking-wide text-gray-400">First Name</label>
                     <input

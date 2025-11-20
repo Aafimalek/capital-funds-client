@@ -11,7 +11,7 @@ export const Footer = () => {
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[1000px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 py-12 md:py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand & Address */}
           <div className="space-y-6">

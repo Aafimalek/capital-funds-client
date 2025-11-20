@@ -48,22 +48,22 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
+    <section id="services" className="relative py-16 md:py-32 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px] animate-pulse-glow" />
-      <div className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      <div className="absolute left-0 top-1/4 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-blue-600/10 blur-[80px] md:blur-[120px] animate-pulse-glow" />
+      <div className="absolute right-0 bottom-1/4 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-cyan-600/10 blur-[80px] md:blur-[120px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-20 text-center">
+        <div className="mb-12 md:mb-20 text-center">
           <FadeIn>
             <span className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-300 backdrop-blur-sm">
               Our Services
             </span>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Trading Solutions <br />
               <span className="text-gradient">Designed for Impact</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+            <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-gray-400">
               From high-frequency options strategies to long-term wealth creation, we provide the intelligence you need to stay ahead.
             </p>
           </FadeIn>
