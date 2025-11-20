@@ -1,192 +1,159 @@
 import React from 'react';
 import { FadeIn } from './FadeIn';
+import { PillBadge } from './PillBadge';
 
 const services = [
   {
-    title: "Options Trading",
-    description: "Specialized Call & Put strategies for volatile markets. High precision entry/exit.",
+    title: 'Options Trading',
+    description: 'Specialized Call & Put strategies for volatile markets with high precision entry/exit points.',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-white">
-        <path d="M3 3v18h18" />
-        <path d="m19 9-5 5-4-4-3 3" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    color: "from-blue-500 to-blue-600",
+    features: ['High Accuracy Strategies', 'Real-time Alerts', 'Risk Management'],
+    gradient: 'bg-gradient-to-r from-blue-500 to-cyan-400',
+    delay: 0,
   },
   {
-    title: "Indices Coverage",
-    description: "Deep dive analysis of Nifty, BankNifty, and FinNifty trends.",
+    title: 'Indices Coverage',
+    description: 'Deep-dive analysis of Nifty, BankNifty, and FinNifty trends with comprehensive market insights.',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-white">
-        <path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    color: "from-cyan-500 to-blue-500",
+    features: ['Nifty & BankNifty', 'FinNifty Coverage', 'Trend Analysis'],
+    gradient: 'bg-gradient-to-r from-green-500 to-emerald-400',
+    delay: 100,
   },
   {
-    title: "Equity & Cash",
-    description: "Intraday picks for high-volume stocks with momentum analysis.",
+    title: 'Equity & Cash',
+    description: 'Intraday picks for high-volume stocks with momentum analysis and technical precision.',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-white">
-        <path d="M12 2v20" />
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    color: "from-yellow-500 to-orange-500",
+    features: ['Intraday Picks', 'Volume Analysis', 'Technical Signals'],
+    gradient: 'bg-gradient-to-r from-purple-500 to-violet-400',
+    delay: 200,
   },
   {
-    title: "Futures Strategies",
-    description: "Advanced hedging and derivative strategies for HNIs.",
+    title: 'Futures Strategies',
+    description: 'Advanced hedging and directional strategies for futures trading with calculated risk-reward ratios.',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-white">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
       </svg>
     ),
-    color: "from-purple-500 to-pink-500",
+    features: ['Hedging Strategies', 'Risk-Reward Analysis', 'Position Sizing'],
+    gradient: 'bg-gradient-to-r from-red-500 to-orange-400',
+    delay: 300,
   },
 ];
 
 export const Services = () => {
   return (
-    <section id="services" className="relative py-16 md:py-32 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute left-0 top-1/4 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-blue-600/10 blur-[80px] md:blur-[120px] animate-pulse-glow" />
-      <div className="absolute right-0 bottom-1/4 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-cyan-600/10 blur-[80px] md:blur-[120px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
+    <section id="services" className="relative py-16 md:py-24 overflow-hidden bg-background">
+      {/* Animated Background Gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse-glow" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      </div>
 
-      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 md:mb-20 text-center">
-          <FadeIn>
-            <span className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-300 backdrop-blur-sm">
-              Our Services
-            </span>
-            <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Trading Solutions <br />
-              <span className="text-gradient">Designed for Impact</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-gray-400">
-              From high-frequency options strategies to long-term wealth creation, we provide the intelligence you need to stay ahead.
-            </p>
-          </FadeIn>
-        </div>
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <FadeIn className="mx-auto max-w-3xl text-center mb-12 md:mb-16">
+          <PillBadge text="Our Services" />
 
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-rows-2 h-auto lg:h-[600px] auto-rows-fr">
-          {/* Bento Grid Item 1: Options (Large) */}
-          <div className="md:col-span-2 md:row-span-2">
-            <FadeIn className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 hover:scale-[1.02] hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/20">
-                <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl mt-6">
+            Trading Solutions{' '}
+            <span className="text-gradient block mt-2">Designed for Impact</span>
+          </h2>
 
-                <div className="relative z-10 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                      {services[0].icon}
-                    </div>
-                    <h3 className="mb-4 text-3xl font-bold text-white group-hover:text-blue-200 transition-colors">{services[0].title}</h3>
-                    <p className="text-lg text-gray-400 max-w-md leading-relaxed group-hover:text-gray-300 transition-colors">{services[0].description}</p>
-                  </div>
-                  <div className="mt-8">
-                    <div className="flex items-center gap-2 text-sm font-medium text-blue-300">
-                      <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                      High Accuracy Strategies
+          <p className="mt-6 text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+            From high-frequency options strategies to long-term wealth creation, we provide the intelligence you need to stay ahead.
+          </p>
+        </FadeIn>
+
+        {/* Services Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
+          {services.map((service, index) => (
+            <FadeIn key={service.title} delay={service.delay}>
+              <div className="group relative h-full overflow-hidden rounded-2xl">
+                {/* Gradient Border Effect */}
+                <div className={`absolute -inset-0.5 ${service.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75`} />
+
+                {/* Card Content */}
+                <div className="relative h-full glass-card rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:scale-[1.02] flex flex-col">
+                  {/* Icon Container */}
+                  <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${service.gradient} p-0.5 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="flex items-center justify-center w-full h-full bg-[#030712] rounded-2xl text-white">
+                      {service.icon}
                     </div>
                   </div>
-                </div>
 
-                {/* Decorative Chart Line - Animated on Hover */}
-                <div className="absolute bottom-0 right-0 w-3/4 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:translate-x-2">
-                  <svg viewBox="0 0 200 100" fill="none" className="w-full text-blue-500">
-                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50" stroke="currentColor" strokeWidth="4" fill="none" className="drop-shadow-lg" />
-                    <path d="M0 80 C 40 80, 60 20, 100 20 C 140 20, 160 90, 200 50 V 100 H 0 Z" fill="currentColor" fillOpacity="0.2" />
-                  </svg>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+                  {/* Title */}
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
+                    {service.title}
+                  </h3>
 
-          {/* Bento Grid Item 2: Indices */}
-          <div className="md:col-span-1 md:row-span-1">
-            <FadeIn delay={100} className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/20">
-                <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
-                    {services[1].icon}
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed grow">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <div className="space-y-2.5 pt-4 border-t border-white/10">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-3 text-sm group/item">
+                        <div className={`flex items-center justify-center w-5 h-5 rounded-full ${service.gradient} shrink-0 group-hover/item:scale-110 transition-transform duration-200`}>
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white group-hover:text-cyan-200 transition-colors">{services[1].title}</h3>
-                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">{services[1].description}</p>
-                </div>
 
-                {/* Background Decor */}
-                <div className="absolute -right-4 bottom-8 h-24 w-24 opacity-10 transition-all duration-500 group-hover:opacity-20 group-hover:scale-110">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full text-cyan-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
+                  {/* Hover Indicator */}
+                  
                 </div>
               </div>
             </FadeIn>
-          </div>
-
-          {/* Bento Grid Item 3: Equity */}
-          <div className="md:col-span-1 md:row-span-1">
-            <FadeIn delay={200} className="h-full">
-              <div className="glass-card group relative h-full overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:scale-[1.02] hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/20">
-                <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-orange-500 to-red-500 shadow-lg shadow-orange-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                    {services[2].icon}
-                  </div>
-                  <h3 className="mb-2 text-xl font-bold text-white group-hover:text-orange-200 transition-colors">{services[2].title}</h3>
-                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">{services[2].description}</p>
-                </div>
-
-                {/* Background Decor */}
-                <div className="absolute -right-4 bottom-8 h-24 w-24 opacity-10 transition-all duration-500 group-hover:opacity-20 group-hover:scale-110">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full text-orange-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+          ))}
         </div>
 
-        {/* Futures Card (Full Width on Mobile, Span on Desktop) */}
-        <div className="mt-6 grid md:grid-cols-3">
-          <div className="md:col-span-3">
-            <FadeIn delay={300}>
-              <div className="glass-card group relative overflow-hidden rounded-[2.5rem] p-8 md:px-12 md:py-10 transition-all duration-500 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/20 flex flex-col md:flex-row items-center gap-8">
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-linear-to-r from-purple-900/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        {/* Bottom CTA Section */}
+        <FadeIn delay={400} className="mt-12 md:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <a
+              href="#packages"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/50 hover:scale-105"
+            >
+              <span className="relative z-10">View All Packages</span>
+              <svg className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              <div className="absolute inset-0 z-0 bg-gradient-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            </a>
 
-                <div className="relative z-10 shrink-0 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/25 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
-                  {services[3].icon}
-                </div>
-                <div className="relative z-10 flex-1 text-center md:text-left">
-                  <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-purple-200 transition-colors">{services[3].title}</h3>
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{services[3].description}</p>
-                </div>
-                <div className="relative z-10">
-                  <a href="https://wa.me/918000489090" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white/10 px-8 py-3 font-medium text-white transition-all hover:bg-white/20 hover:scale-105 active:scale-95 border border-white/5 hover:border-white/20">
-                    <span>Get Started</span>
-                    <svg className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Background Decor */}
-                <div className="absolute right-0 top-0 h-full w-1/2 opacity-5 pointer-events-none">
-                  <svg viewBox="0 0 400 400" fill="none" className="h-full w-full text-purple-500">
-                    <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                  </svg>
-                </div>
-              </div>
-            </FadeIn>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm font-medium group"
+            >
+              <span>Have questions?</span>
+              <span className="group-hover:underline">Contact us</span>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

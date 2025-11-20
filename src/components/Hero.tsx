@@ -1,9 +1,10 @@
 import React from 'react';
+import { PillBadge } from './PillBadge';
 import Link from 'next/link';
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-navy">
+    <section className="relative h-screen w-full overflow-hidden bg-background">
       {/* Background Video with Modern Overlay */}
       <div className="absolute inset-0 h-full w-full">
         <video
@@ -31,45 +32,37 @@ export const Hero = () => {
         <div className="max-w-5xl space-y-8">
 
           {/* Pill Badge */}
-          <div className="animate-fade-in-up inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm text-blue-300 backdrop-blur-md">
-            <span className="flex h-2 w-2 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
-            SEBI Registered Analyst
-          </div>
+          <PillBadge text="SEBI Registered Analyst" className="animate-fade-in-up" />
 
           {/* Main Headline */}
           <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_20px_rgba(0,0,0,0.5)]">
-            Master the Market with <br className="hidden sm:block" />
-            <span className="text-gradient block mt-2 sm:mt-0 pb-2 leading-tight">Intelligent Insights</span>
+            Master the Market with <br />
+            <span className="text-gradient">Intelligent Insights</span>
           </h1>
 
           {/* Sub-headline */}
-          <p className="mx-auto max-w-2xl text-base sm:text-lg text-gray-300 sm:text-2xl opacity-0 animate-[fadeInUp_1s_ease-out_0.5s_forwards] px-4">
+          <p className="mx-auto max-w-2xl text-lg text-gray-300 sm:text-2xl opacity-0 animate-[fadeInUp_1s_ease-out_0.5s_forwards]">
             Precision-engineered option strategies and real-time advisory for the modern trader.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col w-full sm:w-auto items-center justify-center gap-4 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards] sm:flex-row sm:gap-6 px-4">
+          <div className="flex flex-col w-full sm:w-auto items-center justify-center gap-4 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards] sm:flex-row sm:gap-6">
             <a
               href="https://wa.me/918000489090"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/50 hover:scale-[1.02]"
+              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Request Live Demo
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </span>
-              <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="mr-2">Request Live Demo</span>
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </a>
 
             <Link
               href="#packages"
-              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/50 hover:scale-[1.02]"
+              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                View Packages
-              </span>
-              <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="mr-2">View Packages</span>
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </Link>
           </div>
         </div>

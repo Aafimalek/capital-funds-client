@@ -9,10 +9,10 @@ export const Header = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Packages', href: '#packages' },
-    { name: 'Contact US', href: '#contact' },
+    { name: 'Contact Us', href: '#contact' },
     { name: 'FAQ', href: '#faq' },
   ];
 

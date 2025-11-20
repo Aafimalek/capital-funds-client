@@ -98,10 +98,14 @@ body {
 
 /* Text Gradients */
 .text-gradient {
-  background: linear-gradient(to right, #3b82f6, #06b6d4, #fbbf24);
+  background: linear-gradient(to right, var(--capital-blue), var(--capital-gold));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(to right, var(--capital-blue), var(--capital-cyan));
 }
 
 /* Animations */

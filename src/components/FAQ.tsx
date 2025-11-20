@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FadeIn } from './FadeIn';
+import { PillBadge } from './PillBadge';
 
 const faqs = [
   {
@@ -30,14 +31,17 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative py-16 md:py-24">
+    <section id="faq" className="relative py-16 md:py-24 bg-background">
+      {/* Animated Background Gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse-glow" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16">
           <FadeIn>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-blue-400">
-              Common Questions
-            </h2>
-            <p className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+            <PillBadge text="Common Questions" />
+            <p className="mt-6 text-3xl font-bold text-white sm:text-4xl">
               Frequently Asked <span className="text-gradient">Questions</span>
             </p>
             <p className="mt-4 text-base md:text-lg text-gray-400">
