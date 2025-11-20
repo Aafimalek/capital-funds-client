@@ -74,6 +74,19 @@ export const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Basic validation
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.subject || !formData.message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Phone validation
+    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
+    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
+      alert('Please enter a valid phone number with at least 10 digits.');
+      return;
+    }
+
     const message = encodeURIComponent(`New Contact Inquiry:
 Name: ${formData.fullName}
 Email: ${formData.email}

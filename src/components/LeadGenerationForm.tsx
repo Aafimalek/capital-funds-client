@@ -24,6 +24,20 @@ export const LeadGenerationForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.investmentAmount) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Phone validation (allow +91, spaces, dashes, and ensure at least 10 digits)
+    const phoneRegex = /^(\+?\d{1,4}[\s-]?)?\(?\d{1,4}?\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
+    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
+      alert('Please enter a valid phone number with at least 10 digits.');
+      return;
+    }
+
     const message = encodeURIComponent(`New Demo Request:
 Name: ${formData.firstName} ${formData.lastName}
 Phone: ${formData.phone}
