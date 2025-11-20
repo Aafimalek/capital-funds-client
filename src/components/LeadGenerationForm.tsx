@@ -102,7 +102,12 @@ Investment Amount: ${formData.investmentAmount}`);
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
-                      <div key={i} className="h-10 w-10 rounded-full border-2 border-black bg-gray-800" />
+                      <img
+                        key={i}
+                        src={`/avatars/trader-${i}.png`}
+                        alt={`Trader ${i}`}
+                        className="h-10 w-10 rounded-full border-2 border-black bg-gray-800 object-cover"
+                      />
                     ))}
                   </div>
                   <span className="text-sm font-medium text-gray-300">Join 5k+ Traders</span>
