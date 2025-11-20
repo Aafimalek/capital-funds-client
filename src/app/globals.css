@@ -162,7 +162,7 @@ body {
 			transparent 70%
 		),
 		radial-gradient(at 50% 0%, hsla(225, 39%, 15%, 1) 0, transparent 70%),
-		radial-gradient(at 100% 0%, hsla(339, 49%, 15%, 1) 0, transparent 70%);
+		radial-gradient(at 100% 0%, hsla(225, 49%, 15%, 1) 0, transparent 70%);
 }
 .bg-gradient-2 {
 	background-color: #030712;
@@ -171,8 +171,8 @@ body {
 			hsla(253, 16%, 7%, 1) 0,
 			transparent 70%
 		),
-		radial-gradient(at 50% 100%, hsla(225, 39%, 15%, 1) 0, transparent 70%),
-		radial-gradient(at 100% 100%, hsla(339, 49%, 15%, 1) 0, transparent 70%);
+		radial-gradient(at 50% 100%, hsla(225, 39%, 17%, 1) 0, transparent 70%),
+		radial-gradient(at 100% 100%, hsla(225, 49%, 17%, 1) 0, transparent 70%);
 }
 .bg-gradient-3 {
 	background-color: #030712;
@@ -181,8 +181,8 @@ body {
 			hsla(253, 16%, 7%, 1) 0,
 			transparent 70%
 		),
-		radial-gradient(at 50% 50%, hsla(225, 39%, 15%, 1) 0, transparent 70%),
-		radial-gradient(at 100% 50%, hsla(339, 49%, 15%, 1) 0, transparent 70%);
+		radial-gradient(at 50% 50%, hsla(225, 39%, 19%, 1) 0, transparent 70%),
+		radial-gradient(at 100% 50%, hsla(225, 49%, 19%, 1) 0, transparent 70%);
 }
 .bg-gradient-4 {
 	background-color: #030712;
@@ -191,8 +191,8 @@ body {
 			hsla(253, 16%, 7%, 1) 0,
 			transparent 70%
 		),
-		radial-gradient(at 50% 100%, hsla(225, 39%, 15%, 1) 0, transparent 70%),
-		radial-gradient(at 100% 0%, hsla(339, 49%, 15%, 1) 0, transparent 70%);
+		radial-gradient(at 50% 100%, hsla(225, 39%, 21%, 1) 0, transparent 70%),
+		radial-gradient(at 100% 0%, hsla(225, 49%, 21%, 1) 0, transparent 70%);
 }
 .bg-gradient-5 {
 	background-color: #030712;
@@ -201,6 +201,6 @@ body {
 			hsla(253, 16%, 7%, 1) 0,
 			transparent 70%
 		),
-		radial-gradient(at 50% 0%, hsla(225, 39%, 15%, 1) 0, transparent 70%),
-		radial-gradient(at 100% 100%, hsla(339, 49%, 15%, 1) 0, transparent 70%);
+		radial-gradient(at 50% 0%, hsla(225, 39%, 23%, 1) 0, transparent 70%),
+		radial-gradient(at 100% 100%, hsla(225, 49%, 23%, 1) 0, transparent 70%);
 }
