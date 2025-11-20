@@ -36,13 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pb-16 md:pb-0 overflow-x-hidden`}
       >
         <Header />
         {children}
-        <MobileStickyCTA />
       </body>
     </html>
   );

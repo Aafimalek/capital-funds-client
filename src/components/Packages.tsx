@@ -86,21 +86,20 @@ export const Packages = () => {
               <span className="text-gradient">Every Trader</span>
             </h2>
             <p className="mt-6 max-w-2xl text-base md:text-lg text-gray-400 mx-auto">
-              Choose the plan that best fits your trading style and capital. 
+              Choose the plan that best fits your trading style and capital.
               Transparent pricing, no hidden fees.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-3 lg:gap-10 items-start">
+        <div className="grid gap-8 md:gap-8 lg:grid-cols-3 lg:gap-10 items-start">
           {packages.map((pkg, index) => (
             <FadeIn key={pkg.name} delay={index * 150} className={pkg.isPopular ? 'lg:-mt-8 lg:mb-8' : ''}>
               <div
-                className={`relative flex flex-col rounded-[2rem] border glass-card transition-all duration-500 group ${
-                  pkg.isPopular 
-                    ? 'border-yellow-500/30 shadow-[0_0_50px_-12px_rgba(234,179,8,0.2)] hover:border-yellow-500/50 scale-105 z-10' 
+                className={`relative flex flex-col rounded-[2rem] border glass-card transition-all duration-500 group ${pkg.isPopular
+                    ? 'border-yellow-500/30 shadow-[0_0_50px_-12px_rgba(234,179,8,0.2)] hover:border-yellow-500/50 scale-105 z-10'
                     : 'border-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10'
-                }`}
+                  }`}
               >
                 {/* Popular Badge */}
                 {pkg.isPopular && (
@@ -134,9 +133,8 @@ export const Packages = () => {
                   <ul className="space-y-4 mb-8">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3 group/item">
-                        <div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border bg-white/5 ${
-                          pkg.isPopular ? 'border-yellow-500/30 text-yellow-400' : 'border-white/10 text-blue-400'
-                        }`}>
+                        <div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border bg-white/5 ${pkg.isPopular ? 'border-yellow-500/30 text-yellow-400' : 'border-white/10 text-blue-400'
+                          }`}>
                           <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                           </svg>

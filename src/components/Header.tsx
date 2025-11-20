@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 z-[60] w-full border-b border-white/10 glass transition-all bg-[#030712]/80 backdrop-blur-md">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container relative mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
           <Link href="#home" className="flex items-center space-x-2" onClick={handleLinkClick}>
@@ -41,7 +41,7 @@ export const Header = () => {
         </div>
 
         {/* Center: Navigation (Desktop) */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -55,14 +55,14 @@ export const Header = () => {
 
         {/* Right: CTA & Contact (Desktop) */}
         <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://wa.me/918000489090"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-blue-brand px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Request Demo Call
-            </a>
+          <a
+            href="https://wa.me/918000489090"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-blue-brand px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Request Demo Call
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -85,27 +85,26 @@ export const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full border-b border-white/10 bg-[#030712] transition-all duration-300 ease-in-out overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-[500px] opacity-100 shadow-2xl' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden absolute top-full left-0 w-full border-b border-white/10 bg-[#030712]/95 backdrop-blur-xl transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'max-h-[500px] opacity-100 shadow-2xl' : 'max-h-0 opacity-0'
+          }`}
       >
-        <nav className="flex flex-col p-4 space-y-4">
+        <nav className="flex flex-col p-4 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="block text-base font-medium text-gray-300 transition-colors hover:text-blue-brand px-4 py-2 rounded-lg hover:bg-white/5"
+              className="block text-lg font-medium text-gray-300 transition-colors hover:text-blue-brand px-4 py-3 rounded-lg hover:bg-white/5 active:bg-white/10"
               onClick={handleLinkClick}
             >
               {link.name}
             </Link>
           ))}
-          <div className="pt-4 border-t border-white/10">
+          <div className="pt-4 mt-2 border-t border-white/10">
             <a
               href="https://wa.me/918000489090"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center rounded-full bg-blue-brand px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all active:scale-95 hover:bg-blue-600"
+              className="flex w-full items-center justify-center rounded-full bg-blue-brand px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all active:scale-95 hover:bg-blue-600"
               onClick={handleLinkClick}
             >
               Request Demo Call
