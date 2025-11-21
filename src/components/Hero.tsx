@@ -48,7 +48,7 @@ export const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col w-full sm:w-auto items-center justify-center gap-4 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards] sm:flex-row sm:gap-6">
             <a
-              href="https://wa.me/918000489090"
+              href="https://wa.me/919510997124"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]"

@@ -25,8 +25,8 @@ const contactDetails = [
 	},
 	{
 		title: 'Mail Us',
-		value: 'info@capitalfunds.com',
-		href: 'mailto:info@capitalfunds.com',
+		value: 'capitalfund202@gmail.com',
+		href: 'mailto:capitalfund202@gmail.com',
 		icon: (
 			<svg
 				className="h-6 w-6 text-blue-400"
@@ -44,8 +44,8 @@ const contactDetails = [
 	},
 	{
 		title: 'Telephone',
-		value: '+91 8000489090',
-		href: 'tel:+918000489090',
+		value: '+91 9510997124',
+		href: 'tel:+919510997124',
 		icon: (
 			<svg
 				className="h-6 w-6 text-blue-400"
@@ -161,7 +161,7 @@ Subject: ${formData.subject}
 Message: ${formData.message}`
 		);
 
-		window.open(`https://wa.me/917574067294?text=${message}`, '_blank');
+		window.open(`https://wa.me/919510997124?text=${message}`, '_blank');
 	};
 
 	return (

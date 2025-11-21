@@ -75,7 +75,7 @@ Phone: ${formData.phone}
 Email: ${formData.email}
 Currently Trading: ${formData.isTrading === 'yes' ? 'Yes' : 'No'}
 Investment Amount: ${formData.investmentAmount}`);
-    window.open(`https://wa.me/917574067294?text=${message}`, '_blank');
+    window.open(`https://wa.me/919510997124?text=${message}`, '_blank');
   };
 
   return (

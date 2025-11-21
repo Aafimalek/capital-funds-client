@@ -55,7 +55,7 @@ export const Header = () => {
         {/* Right: CTA & Contact (Desktop) */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://wa.me/918000489090"
+            href="https://wa.me/919510997124"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-blue-brand px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -100,7 +100,7 @@ export const Header = () => {
           ))}
           <div className="pt-4 mt-2 border-t border-white/10">
             <a
-              href="https://wa.me/918000489090"
+              href="https://wa.me/919510997124"
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center rounded-full bg-blue-brand px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all active:scale-95 hover:bg-blue-600"
