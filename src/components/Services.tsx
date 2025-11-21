@@ -1,16 +1,13 @@
 import React from 'react';
 import { FadeIn } from './FadeIn';
 import { PillBadge } from './PillBadge';
+import { TrendingUp, BarChart2, Coins, Layers, Check, ArrowRight, ChevronRight } from 'lucide-react';
 
 const services = [
   {
     title: 'Options Trading',
     description: 'Specialized Call & Put strategies for volatile markets with high precision entry/exit points.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
+    icon: <TrendingUp className="w-8 h-8" strokeWidth={2} />,
     features: ['High Accuracy Strategies', 'Real-time Alerts', 'Risk Management'],
     gradient: 'bg-gradient-to-r from-blue-500 to-cyan-400',
     delay: 0,
@@ -18,11 +15,7 @@ const services = [
   {
     title: 'Indices Coverage',
     description: 'Deep-dive analysis of Nifty, BankNifty, and FinNifty trends with comprehensive market insights.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+    icon: <BarChart2 className="w-8 h-8" strokeWidth={2} />,
     features: ['Nifty & BankNifty', 'FinNifty Coverage', 'Trend Analysis'],
     gradient: 'bg-gradient-to-r from-green-500 to-emerald-400',
     delay: 100,
@@ -30,11 +23,7 @@ const services = [
   {
     title: 'Equity & Cash',
     description: 'Intraday picks for high-volume stocks with momentum analysis and technical precision.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <Coins className="w-8 h-8" strokeWidth={2} />,
     features: ['Intraday Picks', 'Volume Analysis', 'Technical Signals'],
     gradient: 'bg-gradient-to-r from-purple-500 to-violet-400',
     delay: 200,
@@ -42,11 +31,7 @@ const services = [
   {
     title: 'Futures Strategies',
     description: 'Advanced hedging and directional strategies for futures trading with calculated risk-reward ratios.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-      </svg>
-    ),
+    icon: <Layers className="w-8 h-8" strokeWidth={2} />,
     features: ['Hedging Strategies', 'Risk-Reward Analysis', 'Position Sizing'],
     gradient: 'bg-gradient-to-r from-red-500 to-orange-400',
     delay: 300,
@@ -109,9 +94,7 @@ export const Services = () => {
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3 text-sm group/item">
                         <div className={`flex items-center justify-center w-5 h-5 rounded-full ${service.gradient} shrink-0 group-hover/item:scale-110 transition-transform duration-200`}>
-                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" strokeWidth={3} />
                         </div>
                         <span className="text-gray-300 group-hover/item:text-white transition-colors duration-200">
                           {feature}
@@ -136,9 +119,7 @@ export const Services = () => {
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/50 hover:scale-105"
             >
               <span className="relative z-10">View All Packages</span>
-              <svg className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" strokeWidth={2} />
               <div className="absolute inset-0 z-0 bg-gradient-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </a>
 
@@ -148,9 +129,7 @@ export const Services = () => {
             >
               <span>Have questions?</span>
               <span className="group-hover:underline">Contact us</span>
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
             </a>
           </div>
         </FadeIn>

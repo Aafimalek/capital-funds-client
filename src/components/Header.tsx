@@ -26,7 +26,7 @@ export const Header = () => {
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
           <Link href="#home" className="flex items-center space-x-2" onClick={handleLinkClick}>
-            <div className="relative h-16 w-40 sm:w-56 transition-transform duration-300 hover:scale-105">
+            <div className="relative h-25 w-40 sm:w-56 transition-transform duration-300 hover:scale-105">
               <Image
                 src="/logo2.png"
                 alt="Capital Funds logo"
