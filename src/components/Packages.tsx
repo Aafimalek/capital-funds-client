@@ -108,11 +108,10 @@ export const Packages = () => {
 							className={pkg.isPopular ? 'lg:-mt-8 lg:mb-8' : ''}
 						>
 							<div
-								className={`relative flex flex-col rounded-4xl border glass-card transition-all duration-500 group ${
-									pkg.isPopular
-										? 'border-yellow-500/30 shadow-[0_0_50px_-12px_rgba(234,179,8,0.2)] hover:border-yellow-500/50 scale-105 z-10'
-										: 'border-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10'
-								}`}
+								className={`relative flex flex-col rounded-4xl border glass-card transition-all duration-500 group ${pkg.isPopular
+										? 'border-yellow-500/50 shadow-[0_0_60px_-12px_rgba(234,179,8,0.3)] hover:border-yellow-400 hover:shadow-[0_0_80px_-12px_rgba(234,179,8,0.4)] scale-105 z-10'
+										: 'border-white/10 hover:border-white/30 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1'
+									}`}
 							>
 								{/* Popular Badge */}
 								{pkg.isPopular && (
@@ -135,17 +134,15 @@ export const Packages = () => {
 									className={`p-8 rounded-t-4xl border-b border-white/5 ${pkg.headerBg}`}
 								>
 									<h3
-										className={`text-xl font-bold ${
-											pkg.isPopular ? 'text-white' : 'text-gray-200'
-										}`}
+										className={`text-xl font-bold ${pkg.isPopular ? 'text-white' : 'text-gray-200'
+											}`}
 									>
 										{pkg.name}
 									</h3>
 									<div className="mt-4 flex items-baseline gap-1">
 										<span
-											className={`text-4xl font-bold ${
-												pkg.isPopular ? 'text-yellow-400' : 'text-white'
-											}`}
+											className={`text-4xl font-bold ${pkg.isPopular ? 'text-yellow-400' : 'text-white'
+												}`}
 										>
 											{pkg.price}
 										</span>
@@ -164,18 +161,17 @@ export const Packages = () => {
 												className="flex items-start gap-3 group/item"
 											>
 												<div
-													className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border bg-white/5 ${
-														pkg.isPopular
-															? 'border-yellow-500/30 text-yellow-400'
-															: 'border-white/10 text-blue-400'
-													}`}
+													className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${pkg.isPopular
+															? 'bg-yellow-500/20 text-yellow-400'
+															: 'bg-blue-500/20 text-blue-400'
+														}`}
 												>
 													<svg
-														className="h-3 w-3"
+														className="h-3.5 w-3.5"
 														fill="none"
 														viewBox="0 0 24 24"
 														stroke="currentColor"
-														strokeWidth={2.5}
+														strokeWidth={3}
 													>
 														<path
 															strokeLinecap="round"
@@ -195,9 +191,8 @@ export const Packages = () => {
 										href={`https://wa.me/918000489090?text=I'm interested in the ${pkg.name}`}
 										target="_blank"
 										rel="noopener noreferrer"
-										className={`group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl px-6 py-4 text-base font-bold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-											pkg.buttonBg
-										} ${pkg.buttonTextColor}`}
+										className={`group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl px-6 py-4 text-base font-bold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${pkg.buttonBg
+											} ${pkg.buttonTextColor}`}
 									>
 										<span className="relative z-10">{pkg.buttonText}</span>
 										<svg

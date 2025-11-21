@@ -35,7 +35,7 @@ export const Hero = () => {
           <PillBadge text="SEBI Registered Analyst" className="animate-fade-in-up" />
 
           {/* Main Headline */}
-          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_20px_rgba(0,0,0,0.5)]">
+          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
             Master the Market with <br />
             <span className="text-gradient">Intelligent Insights</span>
           </h1>
@@ -59,7 +59,7 @@ export const Hero = () => {
 
             <Link
               href="#packages"
-              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]"
+              className="group relative w-full sm:w-auto inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-8 font-medium text-white transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-white/20"
             >
               <span className="mr-2">View Packages</span>
               <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>

@@ -131,7 +131,7 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.firstName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${errors.firstName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
                         }`}
                       placeholder="John"
                     />
@@ -147,7 +147,7 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.lastName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${errors.lastName ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
                         }`}
                       placeholder="Doe"
                     />
@@ -165,7 +165,7 @@ Investment Amount: ${formData.investmentAmount}`);
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${errors.phone ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
                       }`}
                     placeholder="+91 98765 43210"
                   />
@@ -204,7 +204,7 @@ Investment Amount: ${formData.investmentAmount}`);
                       required
                       value={formData.investmentAmount}
                       onChange={handleChange}
-                      className={`w-full rounded-xl border px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none transition-all appearance-none ${errors.investmentAmount ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                      className={`w-full rounded-xl border px-4 py-3 text-white focus:border-blue-500 focus:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all appearance-none ${errors.investmentAmount ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
                         }`}
                     >
                       <option value="" disabled className="text-gray-500">Select Investment Amount</option>
@@ -232,7 +232,7 @@ Investment Amount: ${formData.investmentAmount}`);
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none transition-all ${errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
+                    className={`w-full rounded-xl border px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${errors.email ? 'border-red-500 bg-red-500/10' : 'border-white/10 bg-white/5'
                       }`}
                     placeholder="example@email.com"
                   />
@@ -249,7 +249,7 @@ Investment Amount: ${formData.investmentAmount}`);
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
-                  <div className="absolute inset-0 z-0 bg-linear-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </button>
               </form>
             </div>

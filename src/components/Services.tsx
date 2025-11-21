@@ -86,10 +86,10 @@ export const Services = () => {
                 <div className={`absolute -inset-0.5 ${service.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 group-active:opacity-75 group-focus:opacity-75`} />
 
                 {/* Card Content */}
-                <div className="relative h-full glass-card rounded-2xl p-6 md:p-8 transition-all duration-300 group-hover:scale-[1.02] flex flex-col">
+                <div className="relative h-full glass-card rounded-2xl p-6 md:p-8 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)] flex flex-col">
                   {/* Icon Container */}
-                  <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${service.gradient} p-0.5 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="flex items-center justify-center w-full h-full bg-[#030712] rounded-2xl text-white">
+                  <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${service.gradient} p-0.5 mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+                    <div className="flex items-center justify-center w-full h-full bg-[#030712]/90 backdrop-blur-xl rounded-2xl text-white">
                       {service.icon}
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export const Services = () => {
                   </div>
 
                   {/* Hover Indicator */}
-                  
+
                 </div>
               </div>
             </FadeIn>
